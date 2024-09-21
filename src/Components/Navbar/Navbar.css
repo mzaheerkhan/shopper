@@ -1,0 +1,124 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    box-shadow: 0 1px 3px -2px black;
+    height: 80px;
+}
+
+.nav-logo{
+display: flex;
+align-items: center;
+justify-items: center;
+gap: 10px ;
+}
+.nav-logo p{
+    color: #171717;
+    font-size: 36px;
+    font-weight: 600;
+}
+.nav-menu{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-items: center;
+    gap: 50px;
+    color: #626262;
+    font-size: 18px;
+    font-weight: 500;
+}
+.nav-menu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 3px;
+    cursor: pointer;
+}
+.nav-menu hr{
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background: #FF4141;
+}
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 45px;
+
+}
+.nav-login-cart button{
+    width: 100px;
+    height:40px;
+    outline: none;
+    border: 1px solid #7a7a7a;
+    border-radius: 75px;
+    color: #515151;
+    font-size: 18px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+}
+.nav-login-cart button:active{
+    background: #f3f3f3;
+}
+.nav-login-cart img{
+    width: 40px;
+    height: 40px;
+}
+.nav-cart-count{
+    width: 20px;
+    height: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: -35px;
+   margin-left: -55px;
+   border-radius: 11px;
+   font-size: 14px;
+   background: red;
+   color: white;
+}
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Media query for max-width: 650px */
+@media (max-width: 1000px) and (min-width:200px) {
+    .nav-menu {
+        display: none;  /* Hide menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    }
+    .nav-logo p{
+        color: #171717;
+        font-size: 30px;
+        font-weight: 400;
+    }
+    
+ 
+    .nav-menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .hamburger {
+        display: flex;
+          align-items: center;
+    }
+
+    .nav-login-cart {
+        display: none;  /* Hide login and cart buttons on small screens */
+    }
+}
