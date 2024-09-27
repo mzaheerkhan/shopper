@@ -11,15 +11,16 @@
     gap: 20px;
     padding-left: 180px;
     line-height: 1.2;
+ 
 }
 .hero-left h2{
     color: #090909;
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 600;
 }
 .hero-left p{
     color:#171717;
-    font-size: 70px;
+    font-size: 88px;
     font-weight: 700;
 }
 .hero-hand-icon{
@@ -29,7 +30,7 @@
 
 }
 .hero-hand-icon img{
-    margin-top: 3px;
+    margin-top: 0px;
     width: 90px;
 }
 .hero-latest-btn{
@@ -51,9 +52,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+   
 }
 .hero-right img {
-    height: 95vh;    
+  max-height: 98vh;  
   }
   @media (min-width:200px) and (max-width:900px){
     .hero{

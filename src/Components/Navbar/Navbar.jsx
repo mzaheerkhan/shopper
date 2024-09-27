@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import logo from "../Assets/logo.png";
 import cartIcon from "../Assets/cart_icon.png";
 import { Link } from "react-router-dom";
 import { FaTimes, FaBars } from "react-icons/fa";
+import { ShopContext } from "../../context/ShopContext";
 const Navbar = () => {
+  const { totalCartItem } = useContext(ShopContext);
   const [menu, setMenu] = useState("shop");
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -29,7 +31,7 @@ const Navbar = () => {
           {menu === "shop" ? <hr /> : <></>}
         </li>
         <li onClick={() => setMenu("men")}>
-          <Link to="/men" style={{ textDecoration: "none", color: "inherit" }}>
+          <Link to="/mens" style={{ textDecoration: "none", color: "inherit" }}>
             {" "}
             Men
           </Link>
@@ -37,7 +39,7 @@ const Navbar = () => {
         </li>
         <li onClick={() => setMenu("women")}>
           <Link
-            to="/women"
+            to="/womens"
             style={{ textDecoration: "none", color: "inherit" }}
           >
             Women
@@ -45,7 +47,7 @@ const Navbar = () => {
           {menu === "women" ? <hr /> : <></>}
         </li>
         <li onClick={() => setMenu("kids")}>
-          <Link to="/kid" style={{ textDecoration: "none", color: "inherit" }}>
+          <Link to="/kids" style={{ textDecoration: "none", color: "inherit" }}>
             kids
           </Link>
           {menu === "kids" ? <hr /> : <></>}
@@ -59,7 +61,7 @@ const Navbar = () => {
         <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
           <img src={cartIcon} alt="cart_icon" />
         </Link>
-        <div className="nav-cart-count">0</div>
+        <div className="nav-cart-count">{totalCartItem()}</div>
       </div>
     </div>
   );

@@ -29,6 +29,11 @@
 .footer-social-icons{
     display: flex;
     gap: 20px;
+    cursor: pointer;
+}
+.footer-social-icons img:hover {
+    transform: scale(1.3); /* Increases the size by 10% */
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 .footer-icons-container{
     padding: 10px;
